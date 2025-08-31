@@ -26,6 +26,12 @@
 @theme {
   --font-bebas: "Bebas Neue", sans-serif;
   --font-netflix: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+
+  /* Netflix Colors */
+  --color-netflix-red: #e50914;
+  --color-netflix-black: #141414;
+  --color-netflix-dark: #0f0f0f;
+  --color-netflix-gray: #181818;
 }
 
 @import "tailwindcss";

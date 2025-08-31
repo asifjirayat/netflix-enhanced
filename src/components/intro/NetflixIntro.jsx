@@ -20,7 +20,7 @@ const NetflixIntro = ({ onComplete }) => {
     // Timeline: appear (0-1.2s) -> scale to camera (1.2-3s)
     const scaleTimer = setTimeout(() => setStage("scaleToCamera"), 1200);
 
-    const endTimer = setTimeout(() => onComplete?.(), 3000);
+    const endTimer = setTimeout(() => onComplete?.(), 3200);
 
     return () => {
       clearTimeout(scaleTimer);
@@ -31,7 +31,11 @@ const NetflixIntro = ({ onComplete }) => {
   if (!hasStarted) {
     return (
       <div className="h-screen w-screen bg-black flex flex-col gap-6 items-center justify-center">
-        <img src="/netflix.svg" alt="Netflix" className="h-50 opacity-50" />
+        <img
+          src="/netflix.svg"
+          alt="Netflix"
+          className="h-50 w-auto opacity-50"
+        />
         <button
           onClick={handleStart}
           className="px-8 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition-colors duration-200 text-lg"
@@ -59,19 +63,19 @@ const NetflixIntro = ({ onComplete }) => {
                 ease: "easeOut",
                 type: "spring",
                 stiffness: 100,
+                damping: 12,
               }
             : {
                 duration: 1.8,
-                ease: "easeIn",
+                ease: [0.25, 0.46, 0.45, 0.94],
               }
         }
         style={{
-          perspective: "1000px",
           filter: "drop-shadow(0 0 20px rgba(229,9,20,0.3))",
         }}
       >
         {/* Netflix Logo SVG */}
-        <img src="/netflix.svg" alt="Netflix" className="h-50" />
+        <img src="/netflix.svg" alt="Netflix" className="h-50 w-auto" />
       </motion.div>
     </div>
   );
