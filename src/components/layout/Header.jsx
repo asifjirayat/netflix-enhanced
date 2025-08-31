@@ -1,12 +1,26 @@
+import useScrollPosition from "../../hooks/useScrollPosition.js";
 import { MagnifyingGlassIcon, BellIcon } from "@heroicons/react/24/outline";
 
 const Header = () => {
+  const scrollPosition = useScrollPosition();
+  const isScrolled = scrollPosition > 50;
+
   return (
-    <header className="fixed top-0 w-full z-50 bg-gradient-to-b from-black/80 to-transparent">
+    <header
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-netflix-black/95 backdrop-blur-sm"
+          : "bg-gradient-to-b from-black/70 to-transparent"
+      }`}
+    >
       <div className="px-4 md:px-16 py-4 flex items-center justify-between">
         {/* Left - Logo & Navigation */}
         <div className="flex items-center space-x-8">
-          <img src="/netflix.svg" alt="Netflix" className="h-6 md:h-8" />
+          <img
+            src="/netflix-logo-full.svg"
+            alt="Netflix"
+            className="w-[92px]"
+          />
           <nav className="hidden md:flex space-x-6 font-netflix text-sm">
             <a href="#" className="text-white hover:text-gray-300">
               Home

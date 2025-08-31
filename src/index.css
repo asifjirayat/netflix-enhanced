@@ -23,6 +23,9 @@
   font-style: normal;
   font-display: swap;
 }
+
+@import "tailwindcss";
+
 @theme {
   --font-bebas: "Bebas Neue", sans-serif;
   --font-netflix: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
@@ -33,5 +36,13 @@
   --color-netflix-dark: #0f0f0f;
   --color-netflix-gray: #181818;
 }
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 
-@import "tailwindcss";
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}

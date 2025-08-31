@@ -1,5 +1,7 @@
 import Header from "../layout/Header.jsx";
 import Hero from "../sections/Hero.jsx";
+import MovieRow from "../movies/MovieRow.jsx";
+import { mockMovies } from "../../utils/mockData.js";
 import {
   FilmIcon,
   CursorArrowRaysIcon,
@@ -11,6 +13,16 @@ const Homepage = () => {
     <div className="h-screen w-screen bg-netflix-black text-white">
       <Header />
       <Hero />
+
+      {/* Movie row section */}
+      <div className="pb-20">
+        <MovieRow title="TRENDING NOW" movies={mockMovies.trending} />
+        <MovieRow
+          title="NETFLIX ORIGINALS"
+          movies={mockMovies.netflixOriginals}
+        />
+        <MovieRow title="POPULAR ON NETFLIX" movies={mockMovies.popular} />
+      </div>
 
       {/* Coming soon section */}
       <div className="px-4md:px-16 py-20 bg-netflix-black">
