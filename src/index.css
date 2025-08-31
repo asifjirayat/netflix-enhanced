@@ -1,1 +1,31 @@
+/* Load fonts */
+@font-face {
+  font-family: "Bebas Neue";
+  src: url("/fonts/bebas-neue/BebasNeue.woff") format("woff"),
+    url("/fonts/bebas-neue/BebasNeue.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("/fonts/helvetica-neue/HelveticaNeue-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("/fonts/helvetica-neue/HelveticaNeue-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@theme {
+  --font-bebas: "Bebas Neue", sans-serif;
+  --font-netflix: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
 @import "tailwindcss";
