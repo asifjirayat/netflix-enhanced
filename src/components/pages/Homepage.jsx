@@ -10,7 +10,7 @@ import {
 
 const Homepage = () => {
   return (
-    <div className="h-screen w-screen bg-dark text-white">
+    <div className="min-h-screen w-full bg-dark text-white">
       <Header />
       <Hero />
 
@@ -25,7 +25,7 @@ const Homepage = () => {
       </div>
 
       {/* Coming soon section */}
-      <div className="px-4md:px-16 py-20 bg-dark">
+      <div className="px-4 md:px-16 py-20">
         <div className="text-center">
           <h2 className="text-3xl font-bebas text-white mb-4 tracking-wide">
             COMING NEXT

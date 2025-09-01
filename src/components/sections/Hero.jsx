@@ -1,4 +1,5 @@
-import { PlayIcon, InformationCircleIcon } from "@heroicons/react/24/outline";
+import { InformationCircleIcon } from "@heroicons/react/24/outline";
+import { PlayIcon } from "@heroicons/react/24/solid";
 
 const Hero = () => {
   return (
