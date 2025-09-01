@@ -1,5 +1,5 @@
 import { useState } from "react";
-import NetflixIntro from "./components/intro/NetflixIntro.jsx";
+import StreamflixIntro from "./components/intro/StreamflixIntro.jsx";
 import Homepage from "./components/pages/Homepage.jsx";
 
 const App = () => {
@@ -10,7 +10,7 @@ const App = () => {
   return (
     <>
       {showIntro ? (
-        <NetflixIntro onComplete={handleIntroComplete} />
+        <StreamflixIntro onComplete={handleIntroComplete} />
       ) : (
         <Homepage />
       )}

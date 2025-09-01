@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 
-const NetflixIntro = ({ onComplete }) => {
+const StreamflixIntro = ({ onComplete }) => {
   const [hasStarted, setHasStarted] = useState(false);
   const [stage, setStage] = useState("appear");
 
@@ -32,15 +32,15 @@ const NetflixIntro = ({ onComplete }) => {
     return (
       <div className="h-screen w-screen bg-black flex flex-col gap-6 items-center justify-center">
         <img
-          src="/netflix.svg"
-          alt="Netflix"
+          src="/streamflix.svg"
+          alt="Streamflix"
           className="h-50 w-auto opacity-50"
         />
         <button
           onClick={handleStart}
           className="px-8 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition-colors duration-200 text-lg"
         >
-          Start Netflix Experience
+          Start Streamflix Experience
         </button>
       </div>
     );
@@ -74,11 +74,11 @@ const NetflixIntro = ({ onComplete }) => {
           filter: "drop-shadow(0 0 20px rgba(229,9,20,0.3))",
         }}
       >
-        {/* Netflix Logo SVG */}
-        <img src="/netflix.svg" alt="Netflix" className="h-50 w-auto" />
+        {/* Streamflix Logo SVG */}
+        <img src="/streamflix.svg" alt="Streamflix" className="h-50 w-auto" />
       </motion.div>
     </div>
   );
 };
 
-export default NetflixIntro;
+export default StreamflixIntro;

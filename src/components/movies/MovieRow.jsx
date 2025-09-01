@@ -11,21 +11,21 @@ const MovieRow = ({ title, movies }) => {
         {movies.map((movie, index) => (
           <div
             key={index}
-            className="min-w-[160px] md:min-w-[200px] bg-netflix-gray rounded-md overflow-hidden"
+            className="min-w-[160px] md:min-w-[200px] bg-gray rounded-md overflow-hidden"
           >
             {/* Movie poster placeholder */}
             <div className="aspect-[2/3] bg-gradient-to-br from-gray-600 to-gray-800 items-center justify-center">
-              <span className="text-gray-400 font-netflix text-sm text-center px-4">
+              <span className="text-gray-400 helvetica text-sm text-center px-4">
                 {movie.title}
               </span>
             </div>
 
             {/* Movie info */}
             <div className="p-3">
-              <h3 className="text-white font-netflix text-sm font-medium mb-1 truncate">
+              <h3 className="text-white helvetica text-sm font-medium mb-1 truncate">
                 {movie.title}
               </h3>
-              <p className="text-gray-400 font-netflix text-xs">
+              <p className="text-gray-400 helvetica text-xs">
                 {movie.year} • {movie.rating}
               </p>
             </div>

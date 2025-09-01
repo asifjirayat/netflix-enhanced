@@ -9,7 +9,7 @@ const Header = () => {
     <header
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-netflix-black/95 backdrop-blur-sm"
+          ? "bg-dark/95 backdrop-blur-sm"
           : "bg-gradient-to-b from-black/70 to-transparent"
       }`}
     >
@@ -17,11 +17,11 @@ const Header = () => {
         {/* Left - Logo & Navigation */}
         <div className="flex items-center space-x-8">
           <img
-            src="/netflix-logo-full.svg"
-            alt="Netflix"
-            className="w-[92px]"
+            src="/streamflix-logo-full.svg"
+            alt="Streamflix"
+            className="w-auto h-[32px]"
           />
-          <nav className="hidden md:flex space-x-6 font-netflix text-sm">
+          <nav className="hidden md:flex space-x-6 font-helvetica text-sm">
             <a href="#" className="text-white hover:text-gray-300">
               Home
             </a>
@@ -60,8 +60,8 @@ const Header = () => {
           <button className="text-white hover:text-gray-300 transition-colors">
             <BellIcon className="w-5 h-5" />
           </button>
-          <div className="w-8 h-8 bg-netflix-red rounded-sm flex items-center justify-center">
-            <span className="text-white text-xs font-netflix font-medium">
+          <div className="w-8 h-8 bg-primary rounded-sm flex items-center justify-center">
+            <span className="text-white text-xs font-helvetica font-medium">
               U
             </span>
           </div>

@@ -21,7 +21,7 @@ export const mockMovies = {
     { title: "Mindhunter", year: "2019", rating: "TV-MA" },
   ],
 
-  netflixOriginals: [
+  streamflixOriginals: [
     { title: "The Queen's Gambit", year: "2020", rating: "TV-MA" },
     { title: "Russian Doll", year: "2022", rating: "TV-MA" },
     { title: "Umbrella Academy", year: "2024", rating: "TV-14" },

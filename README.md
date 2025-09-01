@@ -1,8 +1,8 @@
-# Netflix Enhanced - React Clone Project
+# Streamflix - React Based Streaming Platform
 
-A modern Netflix clone built with React, showcasing authentic animations, responsive design, and movie streaming interface.
+A modern Streamflix clone built with React, showcasing authentic animations, responsive design, and movie streaming interface.
 
-#### Live Demo: [https://netflix-enhanced.vercel.app/](https://netflix-enhanced.vercel.app/)
+#### Live Demo: [https://streamflix-enhanced.vercel.app/](https://streamflix-enhanced.vercel.app/)
 
 ## Tech Stack
 
@@ -20,7 +20,7 @@ Project Foundation
 
 - ✅ Clean React + Vite setup with optimized development workflow
 - ✅ Tailwind CSS 4.1 configuration with offline font loading
-- ✅ Netflix Intro Animation: Authentic Netflix intro with TA-DUM audio
+- ✅ Streamflix Intro Animation: Authentic Streamflix intro with TA-DUM audio
 - ✅ Smooth logo animation using Framer Motion
 - ✅ Click-to-start functionality for browser autoplay compliance
 - ✅ Homepage Layout Foundation
@@ -31,7 +31,7 @@ Project Foundation
 ### Phase 1: Static UI Components
 
 - Movie row sections with placeholder content
-- Movie card components with proper Netflix styling
+- Movie card components with proper Streamflix styling
 - Enhanced responsive design patterns
 - Loading state placeholders
 
@@ -81,8 +81,8 @@ Project Foundation
 ### Clone the repository
 
 ```bash
-git clone https://github.com/asifjirayat/netflix-enhanced
-cd netflix-enhanced
+git clone https://github.com/asifjirayat/Streamflix-enhanced
+cd Streamflix-enhanced
 ```
 
 ### Install dependencies
