@@ -8,7 +8,7 @@ const MovieCard = ({ movie }) => {
   return (
     <motion.div
       className="min-w-[160px] md:min-w-[200px] cursor-pointer group shrink-0"
-      whileHover={{ scale: 1.3, y: -20, zIndex: 50 }}
+      whileHover={{ scale: 1.3, y: -20, zIndex: 5 }}
       transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.1 }}
       style={{ transformOrigin: "center center" }}
       onHoverStart={() => setIsHovered(true)}
@@ -42,11 +42,11 @@ const MovieCard = ({ movie }) => {
 
               {/* Movie Info */}
               <div className="text-white">
-                <h3 className="font-helvetica font-semibold text-sm mb-1">
+                <h3 className="font-helvetica font-normal text-sm mb-1">
                   {movie.title}
                 </h3>
                 <div className="flex items-center gap-2 text-xs text-gray-300 mb-1">
-                  <span className="bg-gay-600/80 px-1 rounded text-[10px]">
+                  <span className="bg-gray-600/80 px-1 rounded">
                     {movie.rating}
                   </span>
                   <span>{movie.year}</span>
