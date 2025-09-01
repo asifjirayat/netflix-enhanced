@@ -2,7 +2,7 @@
 
 A modern Streamflix clone built with React, showcasing authentic animations, responsive design, and movie streaming interface.
 
-#### Live Demo: [https://streamflix-enhanced.vercel.app/](https://streamflix-enhanced.vercel.app/)
+#### Live Demo: [https://streamflix-flax.vercel.app/](https://streamflix-flax.vercel.app/)
 
 ## Tech Stack
 

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import introAudio from "/mixkit-orchestra-triumphant-trumpets-2285.wav";
 
 const StreamflixIntro = ({ onComplete }) => {
   const [hasStarted, setHasStarted] = useState(false);
@@ -9,7 +10,7 @@ const StreamflixIntro = ({ onComplete }) => {
     setHasStarted(true);
 
     // Play audio after user interaction
-    const audio = new Audio("/netflix-intro.mp3");
+    const audio = new Audio(introAudio);
     audio.volume = 0.7;
     audio.play().catch((error) => console.error("Audio play failed:", error));
   };
@@ -30,15 +31,15 @@ const StreamflixIntro = ({ onComplete }) => {
 
   if (!hasStarted) {
     return (
-      <div className="h-screen w-screen bg-black flex flex-col gap-6 items-center justify-center">
+      <div className="h-screen w-screen bg-dark flex flex-col gap-6 items-center justify-center">
         <img
           src="/streamflix.svg"
           alt="Streamflix"
-          className="h-50 w-auto opacity-50"
+          className="h-20 w-auto opacity-50"
         />
         <button
           onClick={handleStart}
-          className="px-8 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition-colors duration-200 text-lg"
+          className="mt-10 px-8 py-3 bg-primary hover:bg-secondary text-white font-helvetica rounded-lg transition-colors duration-200 text-lg"
         >
           Start Streamflix Experience
         </button>
@@ -47,7 +48,7 @@ const StreamflixIntro = ({ onComplete }) => {
   }
 
   return (
-    <div className="h-screen w-screen bg-black flex items-center justify-center">
+    <div className="h-screen w-screen bg-dark flex items-center justify-center">
       <motion.div
         initial={{
           scale: 0,
@@ -71,7 +72,7 @@ const StreamflixIntro = ({ onComplete }) => {
               }
         }
         style={{
-          filter: "drop-shadow(0 0 20px rgba(229,9,20,0.3))",
+          filter: "drop-shadow(0 0 20px rgba(139,92,246,0.3))",
         }}
       >
         {/* Streamflix Logo SVG */}
