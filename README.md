@@ -94,6 +94,12 @@ npm install
 npm run dev
 ```
 
+### Environment Setup
+
+- Copy `.env.example` to `.env`
+- Add your TMDB API key to `.env`
+- Get your API key from https://www.themoviedb.org/
+
 Open http://localhost:5173 in your browser
 
 ## 📄 License

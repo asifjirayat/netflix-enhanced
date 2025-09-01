@@ -9,7 +9,7 @@ const MovieRow = ({ title, movies }) => {
       </h2>
 
       {/* Movie cards container */}
-      <div className="flex items-stretch space-x-2 overflow-x-auto scrollbar-hide pb-16 pt-4 px-8 -mx-8">
+      <div className="flex items-stretch space-x-4 overflow-x-auto scrollbar-hide pb-16 pt-4 px-8 -mx-8">
         {movies.map((movie, index) => (
           <MovieCard key={`${movie.title}-${index}`} movie={movie} />
         ))}
