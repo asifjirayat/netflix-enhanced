@@ -29,10 +29,10 @@ const Homepage = () => {
   return (
     <div className="min-h-screen w-full bg-dark text-white">
       <Header />
-      <Hero />
+      <Hero movie={movies.featured} />
 
       {/* Movie row section */}
-      <div className="pb-20">
+      <div className="pb-20 mt-20">
         {loading ? (
           // Loading skeleton
           <div className="px-4 md:px-16 space-y-8">
