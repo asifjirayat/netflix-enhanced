@@ -7,6 +7,7 @@ export const useMovies = () => {
     popular: [],
     topRated: [],
     nowPlaying: [],
+    featured: null,
   });
 
   const [loading, setLoading] = useState(true);
@@ -34,11 +35,15 @@ export const useMovies = () => {
             movieAPI.getNowPlaying(),
           ]);
 
+        // Pick first trending movie as featured
+        const featuredMovie = trendingRes?.data?.results?.[0] || null;
+
         setMovies({
           trending: trendingRes.data.results || [],
           popular: popularRes.data.results || [],
           topRated: topRatedRes.data.results || [],
           nowPlaying: nowPlayingRes.data.results || [],
+          featured: featuredMovie,
         });
 
         setError(null);

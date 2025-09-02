@@ -1,7 +1,28 @@
+import { IMAGE_BASE_URL } from "../../services/tmdbApi.js";
 import { InformationCircleIcon } from "@heroicons/react/24/outline";
 import { PlayIcon } from "@heroicons/react/24/solid";
 
-const Hero = () => {
+const Hero = ({ movie }) => {
+  if (!movie) {
+    // Loading state for hero
+    return (
+      <div className="relative h-[70vh] md:h-[80vh] w-full bg-gradient-to-br from-gray-800 to-gray-900">
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="relative z-10 flex items-center h-full px-4 md:px-16">
+          <div className="max-w-2xl">
+            <div className="h-12 bg-gray-700 rounded mb-4 animate-pulse"></div>
+            <div className="h-4 bg-gray-700 rounded mb-2 animate-pulse"></div>
+            <div className="h-4 bg-gray-700 rounded mb-6 w-3/4 animate-pulse"></div>
+            <div className="flex gap-4">
+              <div className="h-12 bg-gray-700 rounded w-32 animate-pulse"></div>
+              <div className="h-12 bg-gray-700 rounded w-32 animate-pulse"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <section className="relative h-screen flex items-center">
       {/* Background placeholder */}

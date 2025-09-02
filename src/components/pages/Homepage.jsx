@@ -41,7 +41,7 @@ const Homepage = () => {
                 <div className="h-6 bg-gray-700 rounded w-48 mb-4 animate-pulse"></div>
 
                 <div className="flex space-x-3">
-                  {[1, 2, 3, 4, 5, 6].map((card) => (
+                  {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((card) => (
                     <div
                       key={card}
                       className="min-w-[140px] md:w-[180px] aspect-[2/3] bg-gray-700 rounded-lg animate-pulse"
