@@ -6,67 +6,131 @@ A modern Streamflix clone built with React, showcasing authentic animations, res
 
 ## Tech Stack
 
-- **Frontend:** React 18 + Vite
-- **Styling:** Tailwind CSS 4.1
-- **Animations:** Framer Motion
-- **Icons:** Heroicons React (Outline)
-- **Fonts:** Bebas Neue + Helvetica Neue (Self-hosted)
-- **HTTP Client:** Axios (Ready for TMDB API)
-- **Deployment:** Vercel
+Frontend:
+
+- React 18 + Vite
+- Tailwind CSS 4.1
+- Framer Motion for animations
+- React Router v6 for navigation
+- Heroicons React (Outline & Solid)
+
+Backend:
+
+- Node.js + Express proxy server
+- Secure API key management
+- CORS protection
+- DNS-agnostic architecture
+
+API & Data:
+
+- TMDB (The Movie Database) API integration
+- Real movie posters, ratings, and metadata
+- Dynamic content fetching with error handling
+
+Fonts & Assets:
+
+- Bebas Neue + Helvetica Neue (Self-hosted)
+- Custom StreamFlix branding and logos
+
+Deployment:
+
+- Frontend: Vercel
+- Backend Proxy: Vercel/Railway
+- Environment-based configuration
 
 ## Completed Features
 
-Project Foundation
+#### Core Application
 
-- ✅ Clean React + Vite setup with optimized development workflow
-- ✅ Tailwind CSS 4.1 configuration with offline font loading
-- ✅ Homepage Layout Foundation
-- ✅ Responsive design with mobile-first approach
+- ✅ Professional React + Vite setup with optimized workflow
+- ✅ Complete responsive design (mobile-first approach)
+- ✅ React Router navigation with clean URLs
+- ✅ Mobile hamburger menu with smooth animations
+- ✅ Fixed header with scroll-based backdrop effects
 
-## Development Roadmap
+#### Movie Data & UI
 
-### Phase 1: Static UI Components
+- ✅ **Real TMDB API Integration** - Live movie data from The Movie Database
+- ✅ **4 Movie Categories** - Trending, Popular, Top Rated, Now Playing
+- ✅ **Dynamic Hero Section** - Featured movie with real backdrop images
+- ✅ **Interactive Movie Cards** - Netflix-style hover effects with scaling
+- ✅ **Movie Runtime Data** - Fetched dynamically on hover/touch
+- ✅ **Professional Loading States** - Skeleton loaders matching final content
 
-- Movie row sections with placeholder content
-- Movie card components with proper Streamflix styling
-- Enhanced responsive design patterns
-- Loading state placeholders
+#### User Experience
 
-### Phase 2: Interactivity
+- ✅ **Cross-Device Compatibility** - Works on desktop, tablet, and mobile
+- ✅ **Touch-Friendly Mobile** - Tap interactions for movie details
+- ✅ **Smooth Animations** - Framer Motion powered transitions
+- ✅ **Horizontal Movie Scrolling** - Habitual browsing experience
+- ✅ **Real Movie Posters** - High-quality images from TMDB
+- ✅ **Active Navigation** - Current page highlighting in menu
 
-- Movie card hover effects and scale animations
-- Header scroll transitions
-- Navigation active states
-- Mobile responsive menu
+#### Architecture & Security
 
-### Phase 3: API Integration
+- 🔄 **Secure API Proxy** - Backend server hides TMDB API keys
+- 🔄 **DNS-Agnostic Design** - Resolves connectivity issues in India
+- 🔄 **Error Handling** - Graceful fallbacks for network issues
+- 🔄 **Professional Deployment** - Separate frontend/backend architecture
+- 🔄 **Environment Configuration** - Secure key management
 
-- TMDB API setup with axios
-- Real movie data fetching
-- Movie categories: Trending, Popular, Top Rated
-- Dynamic movie cards with posters and metadata
+## 🚧 Current Development Phase
 
-### Phase 4: Advanced Features
+**Navigation & Pages** _(In Progress)_
 
-- Movie detail modal overlays
-- Video trailer integration
+- ✅ React Router setup with working navigation
+- ✅ Header navigation with active states
+- 🔄 Individual category pages (Trending, Popular, etc.)
+- 🔄 Movie grid layouts for category pages
+- 🔄 Pagination for loading more movies
+
+## 🛣️ Upcoming Features
+
+#### Advanced Functionality
+
+- Movie detail modal overlays with full information
+- Video trailer integration via TMDB
 - Search functionality with live results
-- My List watchlist feature
-- Genre filtering system
+- My List watchlist feature (local storage)
+- Genre filtering and sorting options
 
-### Phase 5: Performance & Polish
+#### Performance & Polish
 
 - Code splitting and lazy loading
-- Image optimization
-- API caching strategies
-- Accessibility improvements
+- Image optimization and caching
+- API response caching strategies
+- Accessibility improvements (ARIA labels, keyboard navigation)
+- SEO optimization
+
+## 🏗️ Architecture Highlights
+
+#### Security-First Design
+
+- User → Frontend (Vercel) → Proxy Server → TMDB API
+- API keys never exposed to browsers
+- CORS protection for proxy endpoints
+- Production-ready security patterns
+
+#### Global Accessibility
+
+- Resolves DNS issues common in India
+- Works with any ISP or DNS configuration
+- Consistent performance worldwide
+
+#### Professional Patterns
+
+- Component-based architecture
+- Custom hooks for data management
+- Responsive design system
+- Error boundary implementations
 
 ## Technical Decisions
 
-- Framer Motion over Three.js: Perfect for UI animations without 3D complexity
-- Self-hosted Fonts: Better performance than Google Fonts CDN
-- Component-based Structure: Scalable and maintainable code organization
-- Vite over Create React App: Significantly faster development experience
+- Framer Motion over CSS: Better animation control and React integration
+- Self-hosted Fonts: Improved performance over Google Fonts CDN
+- Proxy Architecture: Solves security AND regional connectivity issues
+- React Router: Professional SPA navigation patterns
+- TMDB API: Rich movie database with high-quality assets
 
 ## Installation & Setup
 
@@ -112,4 +176,4 @@ This project is open source and available under the MIT License.
 
 ---
 
-_This README will be updated with more details once the project is completed and deployed._
+_This README will be updated from time-to-time until the project is complete._
