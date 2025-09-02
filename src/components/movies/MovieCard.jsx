@@ -23,19 +23,51 @@ const MovieCard = ({ movie }) => {
     }
   }, [movie.id, movieDetails, detailsLoading]);
 
+  // Handle hover start event on non-touch devices
   const handleHoverStart = () => {
     setIsHovered(true);
     fetchMovieDetails();
   };
 
+  // Handle hover end event on non-touch devices
+  const handleHoverEnd = () => {
+    setIsHovered(false);
+  };
+
+  // Handle touch start event on touch devices
+  const handleTouchStart = () => {
+    setIsHovered(true);
+    fetchMovieDetails();
+  };
+
+  // Handle touch end event on touch devices
+  const handleTouchEnd = () => {
+    setTimeout(() => {
+      setIsHovered(false);
+    }, 3000);
+  };
+
+  // Handle touch outside to close on touch devices
+  const handleClick = () => {
+    if (isHovered) {
+      setIsHovered(false);
+    } else {
+      setIsHovered(true);
+      fetchMovieDetails();
+    }
+  };
+
   return (
     <motion.div
-      className="w-[140px] md:w-[180px] cursor-pointer group shrink-0"
+      className="w-[180px] md:w-[200px] cursor-pointer group shrink-0"
       whileHover={{ scale: 1.02, y: -10, zIndex: 5 }}
       transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.1 }}
       style={{ transformOrigin: "center center" }}
       onHoverStart={handleHoverStart}
-      onHoverEnd={() => setIsHovered(false)}
+      onHoverEnd={handleHoverEnd}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+      onClick={handleClick}
     >
       {/* Movie Poster */}
       <div className="aspect-[2/3] bg-gradient-to-br from-gray-600 to-gray-800 rounded-md overflow-hidden relative">

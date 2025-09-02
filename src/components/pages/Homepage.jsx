@@ -44,7 +44,7 @@ const Homepage = () => {
                   {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((card) => (
                     <div
                       key={card}
-                      className="min-w-[140px] md:w-[180px] aspect-[2/3] bg-gray-700 rounded-lg animate-pulse"
+                      className="min-w-[180px] md:w-[200px] aspect-[2/3] bg-gray-700 rounded-lg animate-pulse"
                     ></div>
                   ))}
                 </div>
