@@ -56,7 +56,6 @@ const Header = () => {
                     ? "text-white font-medium"
                     : "text-gray-300 hover:text-white"
                 }`}
-                Link
               >
                 {item.name}
               </Link>
