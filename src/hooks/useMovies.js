@@ -18,14 +18,6 @@ export const useMovies = () => {
       try {
         setLoading(true);
 
-        // Check if API exists
-
-        if (!import.meta.env.VITE_TMDB_API_KEY) {
-          throw new Error(
-            "TMDB API key is missing. Please add VITE_TMDB_API_KEY to your .env file"
-          );
-        }
-
         // Fetch all movie types simultaneously
         const [trendingRes, popularRes, topRatedRes, nowPlayingRes] =
           await Promise.all([
@@ -51,18 +43,18 @@ export const useMovies = () => {
         setError("Failed to fetch movies");
         console.error("Movies fetch error:", error);
 
-        if (error.response?.status === 401) {
-          setError(
-            "Invalid API key. Please check your TMDB API key in .env file"
-          );
+        if (error.response?.status === 500) {
+          setError("Server error. Please try again.");
         } else if (error.response?.status === 404) {
-          setError("IMDB endpoint not found");
-        } else if (error.message.includes("API key is missing")) {
-          setError(error.message);
-        } else {
+          setError("Movie service unavailable. Please try again later.");
+        } else if (error.response?.status === 503) {
+          setError("Service temporarily unavailable. Please try again later.");
+        } else if (error.code === "NETWORK_ERROR" || !error.response) {
           setError(
-            "Failed to fetch movies. Please check your internet connection"
+            "Unable to connect to movie service. Please check your internet connection"
           );
+        } else {
+          setError("Failed to load movies. Please try again later.");
         }
       } finally {
         setLoading(false);
