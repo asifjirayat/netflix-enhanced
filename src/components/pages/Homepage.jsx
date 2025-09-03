@@ -16,11 +16,19 @@ const Homepage = () => {
       <div className="min-h-screen w-full bg-dark text-white flex items-center justify-center">
         <div className="text-center">
           <h2 className="text-2xl font-bebas mb-2">
-            Oops! Something went wrong
+            Service Temporarily Unavailable
           </h2>
           <p className="text-gray-400">{error}</p>
+          <div className="space-y-3 mt-3">
+            <button
+              className="bg-red-600 hover:bg-red-700 px-6 py-2 rounded transition-colors duration-200 cursor-pointer"
+              onClick={() => window.location.reload()}
+            >
+              Try Again
+            </button>
+          </div>
           <p className="text-gray-500 text-sm mt-2">
-            Check your API key in .env file
+            If the problem persists, please try again in a few minutes.
           </p>
         </div>
       </div>
