@@ -2,54 +2,12 @@ import Header from "../layout/Header.jsx";
 import PageHeader from "../movies/PageHeader.jsx";
 import MoviesGrid from "../movies/MoviesGrid.jsx";
 import LoadMoreButton from "../ui/LoadMoreButton.jsx";
-import { useState, useEffect } from "react";
+import { useMoviesPagination } from "../../hooks/useMoviesPagination.js";
 import { movieAPI } from "../../services/tmdbApi.js";
 
 const NowPlaying = () => {
-  const [movies, setMovies] = useState([]);
-  const [page, setPage] = useState(1);
-  const [hasMore, setHasMore] = useState(true);
-  const [loading, setLoading] = useState(true);
-  const [loadingMore, setLoadingMore] = useState(false);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    fetchMovies(1);
-  }, []);
-
-  const fetchMovies = async (pageNum) => {
-    try {
-      if (pageNum === 1) {
-        setLoading(true);
-      } else {
-        setLoadingMore(true);
-      }
-
-      const response = await movieAPI.getNowPlaying();
-
-      if (pageNum === 1) {
-        setMovies(response.data.results || []);
-      } else {
-        setMovies((prev) => [...prev, ...(response.data.results || [])]);
-      }
-
-      setHasMore(pageNum < response.data.total_pages);
-      setError(null);
-    } catch (error) {
-      console.error("Error fetching now playing movies:", error);
-      setError("Failed to load now playing movies. Please try again later.");
-    } finally {
-      setLoading(false);
-      setLoadingMore(false);
-    }
-  };
-
-  const loadMoreMovies = () => {
-    if (loadingMore || !hasMore) return;
-    const nextPage = page + 1;
-    setPage(nextPage);
-    fetchMovies(nextPage);
-  };
+  const { movies, loading, loadingMore, hasMore, error, page, loadMore } =
+    useMoviesPagination(movieAPI.getNowPlaying);
 
   if (error) {
     return (
@@ -79,7 +37,7 @@ const NowPlaying = () => {
         <LoadMoreButton
           hasMore={hasMore}
           loading={loadingMore}
-          onLoadMore={loadMoreMovies}
+          onLoadMore={loadMore}
           totalMovies={movies.length}
           currentPage={page}
         />
