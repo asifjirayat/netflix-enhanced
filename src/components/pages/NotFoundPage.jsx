@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Header from "../layout/Header.jsx";
+import Footer from "../layout/Footer.jsx";
 import { VideoCameraIcon } from "@heroicons/react/24/outline";
 
 const NotFoundPage = () => {
@@ -57,6 +58,9 @@ const NotFoundPage = () => {
           </p>
         </div>
       </div>
+
+      {/* App footer */}
+      <Footer />
     </div>
   );
 };

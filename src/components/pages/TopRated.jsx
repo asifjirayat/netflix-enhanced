@@ -2,6 +2,7 @@ import Header from "../layout/Header.jsx";
 import PageHeader from "../movies/PageHeader.jsx";
 import MoviesGrid from "../movies/MoviesGrid.jsx";
 import LoadMoreButton from "../ui/LoadMoreButton.jsx";
+import Footer from "../layout/Footer.jsx";
 import { useMoviesPagination } from "../../hooks/useMoviesPagination.js";
 import { movieAPI } from "../../services/tmdbApi.js";
 
@@ -18,6 +19,7 @@ const TopRated = () => {
             <h2 className="text-2xl font-bebas mb-4">{error}</h2>
           </div>
         </div>
+        <Footer />
       </div>
     );
   }
@@ -42,6 +44,9 @@ const TopRated = () => {
           currentPage={page}
         />
       )}
+
+      {/* App footer */}
+      <Footer />
     </div>
   );
 };

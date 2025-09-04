@@ -7,6 +7,7 @@ import {
   CursorArrowRaysIcon,
   GlobeAltIcon,
 } from "@heroicons/react/24/outline";
+import Footer from "../layout/Footer.jsx";
 
 const Homepage = () => {
   const { movies, loading, error } = useMovies();
@@ -108,6 +109,9 @@ const Homepage = () => {
           </div>
         </div>
       </div>
+
+      {/* App footer*/}
+      <Footer />
     </div>
   );
 };
