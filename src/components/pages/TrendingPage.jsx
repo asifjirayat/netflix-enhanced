@@ -1,6 +1,7 @@
 import Header from "../layout/Header.jsx";
 import PageHeader from "../movies/PageHeader.jsx";
 import MoviesGrid from "../movies/MoviesGrid.jsx";
+import LoadMoreButton from "../ui/LoadMoreButton.jsx";
 import { useState, useEffect } from "react";
 import { movieAPI } from "../../services/tmdbApi.js";
 
@@ -74,36 +75,14 @@ const TrendingPage = () => {
       <MoviesGrid loading={loading} movies={movies} category="Trending" />
 
       {/* Load More Button */}
-      {hasMore && !loading && (
-        <div className="text-center pb-20">
-          <button
-            onClick={loadMoreMovies}
-            disabled={loadingMore}
-            className="bg-primary hover:bg-secondary disabled:bg-gray-600 disabled:cursor-not-allowed px-8 py-3 rounded-lg font-helvetica transition-colors duration-200 cursor-pointer"
-          >
-            {loadingMore ? (
-              <div className="flex items-center gap-2">
-                <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white">
-                  Loading More...
-                </div>
-              </div>
-            ) : (
-              "Load More Movies"
-            )}
-          </button>
-          <p className="text-gray-500 text-sm mt-3">
-            Showing {movies.length} movies • Page {page}
-          </p>
-        </div>
-      )}
-
-      {/* End Message */}
-      {!hasMore && movies.length > 0 && (
-        <div className="text-center pb-20">
-          <p className="text-gray-400">
-            You've reached the end! All {movies.length} trending movies loaded.
-          </p>
-        </div>
+      {movies && movies.length > 0 && (
+        <LoadMoreButton
+          hasMore={hasMore}
+          loading={loadingMore}
+          onLoadMore={loadMoreMovies}
+          totalMovies={movies.length}
+          currentPage={page}
+        />
       )}
     </div>
   );
