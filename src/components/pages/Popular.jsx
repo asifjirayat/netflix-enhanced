@@ -36,8 +36,8 @@ const Popular = () => {
       setHasMore(pageNum < response.data.total_pages);
       setError(null);
     } catch (error) {
-      console.error("Error fetching trending movies:", error);
-      setError("Failed to load trending movies. Please try again later.");
+      console.error("Error fetching popular movies:", error);
+      setError("Failed to load popular movies. Please try again later.");
     } finally {
       setLoading(false);
       setLoadingMore(false);
@@ -69,10 +69,10 @@ const Popular = () => {
       <Header />
 
       {/* Page Header */}
-      <PageHeader pageTitle="Trending Movies" />
+      <PageHeader pageTitle="Popular Movies" />
 
       {/* Movies Grid */}
-      <MoviesGrid loading={loading} movies={movies} category="Trending" />
+      <MoviesGrid loading={loading} movies={movies} category="Popular" />
 
       {/* Load More Button */}
       {movies && movies.length > 0 && (

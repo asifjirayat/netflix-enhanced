@@ -65,15 +65,15 @@ const Hero = ({ movie }) => {
 
           {/* Action buttons */}
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="px-8 py-3 bg-white text-black font-helvetica font-semibold rounded-md flex items-center justify-center space-x-2 hover:bg-gray-200 transition-colors cursor-pointer">
+            <button className="px-8 py-3 bg-white text-black font-helvetica font-normal rounded-md flex items-center justify-center space-x-2 hover:bg-gray-200 transition-colors cursor-pointer">
               <PlayIcon className="w-6 h-6" />
               <span>Play</span>
             </button>
-            <button className="px-8 py-3 bg-white/10 text-white font-helvetica font-semibold rounded-md flex items-center justify-center space-x-2 hover:bg-white/20 transition-colors cursor-pointer">
+            <button className="px-8 py-3 bg-white/10 text-white font-helvetica font-normal rounded-md flex items-center justify-center space-x-2 hover:bg-white/20 transition-colors cursor-pointer">
               <PlusIcon className="w-6 h-6" />
               <span>My List</span>
             </button>
-            <button className="px-8 py-3 bg-white/10 text-white font-helvetica font-semibold rounded-md flex items-center justify-center space-x-2 hover:bg-white/20 transition-colors cursor-pointer">
+            <button className="px-8 py-3 bg-white/10 text-white font-helvetica font-normal rounded-md flex items-center justify-center space-x-2 hover:bg-white/20 transition-colors cursor-pointer">
               <InformationCircleIcon className="w-6 h-6" />
               <span>More Info</span>
             </button>

@@ -36,8 +36,8 @@ const TopRated = () => {
       setHasMore(pageNum < response.data.total_pages);
       setError(null);
     } catch (error) {
-      console.error("Error fetching trending movies:", error);
-      setError("Failed to load trending movies. Please try again later.");
+      console.error("Error fetching Top-rated movies:", error);
+      setError("Failed to load Top-rated movies. Please try again later.");
     } finally {
       setLoading(false);
       setLoadingMore(false);
@@ -69,10 +69,10 @@ const TopRated = () => {
       <Header />
 
       {/* Page Header */}
-      <PageHeader pageTitle="Trending Movies" />
+      <PageHeader pageTitle="Top Rated Movies" />
 
       {/* Movies Grid */}
-      <MoviesGrid loading={loading} movies={movies} category="Trending" />
+      <MoviesGrid loading={loading} movies={movies} category="Top Rated" />
 
       {/* Load More Button */}
       {movies && movies.length > 0 && (
