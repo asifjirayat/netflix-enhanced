@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Homepage from "./components/pages/Homepage.jsx";
+import TrendingPage from "./components/pages/TrendingPage.jsx";
 
 const App = () => {
   return (
@@ -9,10 +10,7 @@ const App = () => {
           {/* Homepage route */}
           <Route path="/" element={<Homepage />} />
           {/* Movie category routes */}
-          <Route
-            path="/trending"
-            element={<div>Trending page coming soon...</div>}
-          />
+          <Route path="/trending" element={<TrendingPage />} />
           <Route
             path="/popular"
             element={<div>Popular page coming soon...</div>}
