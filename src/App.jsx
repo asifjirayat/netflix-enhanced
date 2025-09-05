@@ -4,6 +4,7 @@ import TrendingPage from "./components/pages/TrendingPage.jsx";
 import Popular from "./components/pages/Popular.jsx";
 import TopRated from "./components/pages/TopRated.jsx";
 import NowPlaying from "./components/pages/NowPlaying.jsx";
+import SearchResultsPage from "./components/pages/SearchResultsPage.jsx";
 import NotFoundPage from "./components/pages/NotFoundPage.jsx";
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
           <Route path="/popular" element={<Popular />} />
           <Route path="/top-rated" element={<TopRated />} />
           <Route path="/now-playing" element={<NowPlaying />} />
+          <Route path="/search" element={<SearchResultsPage />} />
 
           {/* Catch-all for 404 */}
           <Route path="*" element={<NotFoundPage />} />
