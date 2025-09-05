@@ -7,6 +7,7 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import { Link, useLocation } from "react-router-dom";
+import SearchBar from "../ui/SearchBar.jsx";
 
 const Header = () => {
   const scrollPosition = useScrollPosition();
@@ -34,7 +35,7 @@ const Header = () => {
           : "bg-gradient-to-b from-black/70 to-transparent"
       }`}
     >
-      <div className="px-4 md:px-16 py-4 flex items-center justify-between">
+      <div className="h-20 px-4 md:px-16 py-4 flex items-center justify-between">
         {/* Left - Logo & Navigation */}
         <div className="flex items-center space-x-8">
           <Link to="/">
@@ -65,9 +66,7 @@ const Header = () => {
 
         {/* Right - User Actions */}
         <div className="flex items-center space-x-4">
-          <button className="text-white hover:text-gray-300 transition-colors">
-            <MagnifyingGlassIcon className="w-5 h-5" />
-          </button>
+          <SearchBar />
           <button className="text-white hover:text-gray-300 transition-colors">
             <BellIcon className="w-5 h-5" />
           </button>
