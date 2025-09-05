@@ -6,29 +6,34 @@ export const IMAGE_BASE_URL = import.meta.env.VITE_TMDB_IMAGE_BASE_URL;
 
 const tmdbApi = axios.create({
   baseURL: BASE_URL,
+  timeout: 10000,
 });
 
 export const movieAPI = {
   // Get trending movies
-  getTrending: () => tmdbApi.get("/api/movies/trending"),
+  getTrending: (page = 1) =>
+    tmdbApi.get("/api/movies/trending", { params: { page } }),
 
   // Get popular movies
-  getPopular: () => tmdbApi.get("/api/movies/popular"),
+  getPopular: (page = 1) =>
+    tmdbApi.get("/api/movies/popular", { params: { page } }),
 
   // Get top rated movies
-  getTopRated: () => tmdbApi.get("api/movies/top-rated"),
+  getTopRated: (page = 1) =>
+    tmdbApi.get("api/movies/top-rated", { params: { page } }),
 
   // Get now playing movies
-  getNowPlaying: () => tmdbApi.get("/api/movies/now-playing"),
+  getNowPlaying: (page = 1) =>
+    tmdbApi.get("/api/movies/now-playing", { params: { page } }),
+
+  // Search movies
+  search: (query, page = 1) =>
+    tmdbApi.get("/api/movies/search", {
+      params: { query, page },
+    }),
 
   // Get movie details
   getDetails: (movieId) => tmdbApi.get(`/api/movies/${movieId}`),
-
-  // Search movies
-  search: (query) =>
-    tmdbApi.get("/api/movies/search", {
-      params: { query },
-    }),
 };
 
 export default tmdbApi;
